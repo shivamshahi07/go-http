@@ -77,3 +77,15 @@ go test ./...
 4. **Configuration**: Environment-based configuration
 5. **Graceful Shutdown**: Proper server shutdown handling
 6. **Logging**: Structured logging with request context
+
+# Health check
+
+curl http://localhost:8080/health
+
+# Hello world
+
+curl http://localhost:8080/api/v1/hello
+
+# Echo
+
+curl -X POST -d "Hello, Server!" http://localhost:8080/api/v1/echo
