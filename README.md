@@ -22,12 +22,15 @@ This project demonstrates various aspects of building a production-ready HTTP se
 │   └── server/
 │       └── main.go
 ├── internal/
+│   ├── config/
+│   │   ├── config.go
+│   │   └── config_test.go
 │   ├── handlers/
-│   │   └── handlers.go
-│   ├── middleware/
-│   │   └── middleware.go
-│   └── config/
-│       └── config.go
+│   │   ├── handlers.go
+│   │   └── handlers_test.go
+│   └── middleware/
+│       ├── middleware.go
+│       └── middleware_test.go
 ├── go.mod
 └── README.md
 ```
@@ -78,14 +81,22 @@ go test ./...
 5. **Graceful Shutdown**: Proper server shutdown handling
 6. **Logging**: Structured logging with request context
 
+## Example API Calls
+
 # Health check
 
+```bash
 curl http://localhost:8080/health
+```
 
 # Hello world
 
+```bash
 curl http://localhost:8080/api/v1/hello
+```
 
 # Echo
 
+```bash
 curl -X POST -d "Hello, Server!" http://localhost:8080/api/v1/echo
+```
